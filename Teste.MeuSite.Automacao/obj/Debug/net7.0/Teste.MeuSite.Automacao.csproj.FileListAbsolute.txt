@@ -106,3 +106,4 @@ C:\Users\savio\source\repos\Teste.MeuSite.Automacao\Teste.MeuSite.Automacao\obj\
 C:\Users\savio\source\repos\Teste.MeuSite.Automacao\Teste.MeuSite.Automacao\obj\Debug\net7.0\Teste.MeuSite.Automacao.genruntimeconfig.cache
 C:\Users\savio\source\repos\Teste.MeuSite.Automacao\Teste.MeuSite.Automacao\obj\Debug\net7.0\ref\Teste.MeuSite.Automacao.dll
 C:\Users\savio\source\repos\Teste.MeuSite.Automacao\Teste.MeuSite.Automacao\bin\Debug\net7.0\dotenv.net.dll
+C:\Users\savio\source\repos\Teste.MeuSite.Automacao\Teste.MeuSite.Automacao\obj\Debug\net7.0\Teste.MeuSite.Automacao.sourcelink.json
