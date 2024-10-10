@@ -9,27 +9,32 @@ namespace Teste.MeuSite.Automacao.Test
 {
     class PrincipalTest : PrincipalPage
     {
-        
+        [SetUp]
         public void Entra()
         {
-            
-            
-                PreencheInputCadastroValido();
-                ClicaElementoCadastro();
 
-                PreencheLoginCorreto();
-                ClicarElementoLogin();
-                ValidaCaseCorretoLogin();
-            
+
+            PreencheInputCadastroValido();
+            ClicaElementoCadastro();
+
+            PreencheLoginCorreto();
+            ClicarElementoLogin();
+            ValidaCaseCorretoLogin();
+
 
         }
 
         [Test]
         public void InsereElementoCorreto()
         {
-            Entra();
-
+           
             PreencheItemValido();
+
+        }
+        [Test]
+        public void CopyPast()
+        {
+            CopiaEColla();
 
         }
 

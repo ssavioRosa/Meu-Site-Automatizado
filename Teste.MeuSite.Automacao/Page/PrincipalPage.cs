@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Teste.MeuSite.Automacao.Core;
 
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+
+
 namespace Teste.MeuSite.Automacao.Page
 {
     class PrincipalPage : Begin
@@ -38,7 +42,36 @@ namespace Teste.MeuSite.Automacao.Page
         {
             ValidarElemento("//*[@id=\'root\']/div/div/div/div/h1", "Login");
         }
-      
+        public void CopiaEColla()
+        {
+            string texto = "Copia direito porra!";
+
+
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("var tempInput = document.createElement('input');"
+                           + "tempInput.setAttribute('id', 'tempInput');"
+                           + "tempInput.setAttribute('style', 'position: fixed; top: 10px; left: 10px;');" // Posiciona o input visível
+                           + "document.body.appendChild(tempInput);"
+                           + "tempInput.value = '" + texto + "';");
+
+            IWebElement tempInputField = driver.FindElement(By.Id("tempInput"));
+
+            tempInputField.Click();
+            tempInputField.SendKeys(Keys.Control + "a"); // Ctrl+A para selecionar tudo
+            tempInputField.SendKeys(Keys.Control + "c"); // Ctrl+C para copiar
+
+            // Localiza o campo de entrada onde o texto será colado
+            IWebElement inputField = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/form/input[1]"));
+
+            // Clica no campo de entrada para focar
+            inputField.Click();
+            inputField.SendKeys(Keys.Control + "v");
+  ;
+
+            //(Opcional) Remover o input temporário se não quiser manter na página
+            js.ExecuteScript("document.getElementById('tempInput').remove();");
+        }
+
         //Cases
         public void PreencheItemValido()
         {

@@ -31,8 +31,8 @@ namespace Teste.MeuSite.Automacao.Core
 
             selectElement.SelectByValue(value);
         }
+
        
             
-
     }
 }
